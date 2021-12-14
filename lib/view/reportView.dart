@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'package:epic_report/view/t1View.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -19,9 +20,6 @@ class _ReportViewState extends State<ReportView> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SingleChildScrollView(),
-    );
+    return Scaffold(body: T1View());
   }
 }
