@@ -69,9 +69,9 @@ class _T1ViewState extends State<T1View> {
           ),
           Row(
             children: [
-              Container(
-                width: 200,
-                child: Flexible(
+              Flexible(
+                child: Container(
+                    width: 200,
                     child: TextField(
                         decoration: InputDecoration(
                           labelText: 'Name',
@@ -79,8 +79,8 @@ class _T1ViewState extends State<T1View> {
                         keyboardType: TextInputType.name,
                         textCapitalization: TextCapitalization.sentences,
                         inputFormatters: [
-                      LengthLimitingTextInputFormatter(20),
-                    ])),
+                          LengthLimitingTextInputFormatter(20),
+                        ])),
               ),
               SizedBox(width: 10),
               Text("Type :"),
@@ -108,9 +108,9 @@ class _T1ViewState extends State<T1View> {
           ),
           Row(
             children: [
-              Container(
-                width: 200,
-                child: Flexible(
+              Flexible(
+                child: Container(
+                    width: 200,
                     child: TextField(
                         decoration: InputDecoration(
                           labelText: 'Artifact',
@@ -118,8 +118,8 @@ class _T1ViewState extends State<T1View> {
                         keyboardType: TextInputType.name,
                         textCapitalization: TextCapitalization.sentences,
                         inputFormatters: [
-                      LengthLimitingTextInputFormatter(20),
-                    ])),
+                          LengthLimitingTextInputFormatter(20),
+                        ])),
               ),
               SizedBox(width: 10),
               Flexible(
@@ -140,9 +140,9 @@ class _T1ViewState extends State<T1View> {
           ),
           Row(
             children: [
-              Container(
-                width: 160.0,
-                child: Flexible(
+              Flexible(
+                child: Container(
+                    width: 160.0,
                     child: CheckboxListTile(
                         title: Text(
                           "Enemy outspeed",
@@ -176,9 +176,9 @@ class _T1ViewState extends State<T1View> {
           ),
           Row(
             children: [
-              Container(
-                width: 160.0,
-                child: Flexible(
+              Flexible(
+                child: Container(
+                    width: 160.0,
                     child: CheckboxListTile(
                         title: Text(
                           "Immunity",

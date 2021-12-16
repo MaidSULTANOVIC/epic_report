@@ -35,29 +35,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ReportView(),
-      bottomNavigationBar: BottomAppBar(
-          child: Container(
-        height: 100,
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(
-                  "T1",
-                ),
-                Text(
-                  "T2",
-                ),
-              ],
-            ),
-            Text(
-              "Partager",
-            )
-          ],
-        ),
-      )),
-    );
+    return MaterialApp(home: ReportView());
   }
 }
