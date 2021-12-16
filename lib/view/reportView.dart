@@ -1,10 +1,11 @@
 import 'dart:collection';
+import 'package:epic_report/controllers/t2.controller.dart';
 import 'package:epic_report/view/t1View.dart';
 import 'package:epic_report/view/t2View.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:epic_report/controllers/report.controller.dart';
+import 'package:epic_report/controllers/t1.controller.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ReportView extends StatefulWidget {
@@ -13,7 +14,8 @@ class ReportView extends StatefulWidget {
 }
 
 class _ReportViewState extends State<ReportView> {
-  ReportController controller = Get.put(ReportController());
+  T1Controller controller = Get.put(T1Controller());
+  T2Controller controller2 = Get.put(T2Controller());
 
   @override
   void initState() {
