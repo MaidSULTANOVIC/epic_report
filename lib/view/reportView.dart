@@ -42,8 +42,10 @@ class _ReportViewState extends State<ReportView> {
               elevation: 0.5,
               currentIndex: _currentIndex,
               items: [
-                BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: "T1"),
-                BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: "T2")
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.ac_unit), label: "Turn 1"),
+                BottomNavigationBarItem(
+                    icon: Icon(Icons.ac_unit), label: "Turn 2")
               ],
               iconSize: 0.0,
               onTap: (value) {
@@ -53,9 +55,9 @@ class _ReportViewState extends State<ReportView> {
               },
             ),
             TextButton(
-              child: Text("Partager"),
+              child: Text("Share"),
               onPressed: () {
-                Share.share('check out my website https://example.com');
+                Share.share('Your report has been generated !');
               },
             )
           ],
