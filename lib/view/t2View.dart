@@ -155,10 +155,10 @@ class _T2ViewState extends State<T2View> {
                           "Enemy outspeed",
                           textAlign: TextAlign.center,
                         ),
-                        value: checkedValueOutspeed,
+                        value: controller.checkedValueOutspeed[index],
                         onChanged: (value) {
                           setState(() {
-                            checkedValueOutspeed = value!;
+                            controller.checkedValueOutspeed[index] = value!;
                           });
                         })),
               ),
