@@ -283,47 +283,35 @@ class _ReportViewState extends State<ReportView> {
     share_data = data;
   }
 
+  final pageViewController = PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: Text("TURN 1 ", style: TextStyle(color: Colors.black)),
-        centerTitle: true,
-        backgroundColor: Colors.white,
-        elevation: 0.0,
+      backgroundColor: Colors.blue,
+      body: PageView(
+        controller: pageViewController,
+        children: _children,
       ),
-      body: _children[_currentIndex],
       bottomNavigationBar: BottomAppBar(
           child: Container(
-        color: Colors.white,
-        height: 110,
-        child: Column(
-          children: [
-            BottomNavigationBar(
-              elevation: 0.5,
-              currentIndex: _currentIndex,
-              items: [
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.ac_unit), label: "Turn 1"),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.ac_unit), label: "Turn 2")
-              ],
-              iconSize: 0.0,
-              onTap: (value) {
-                setState(() {
-                  _currentIndex = value;
-                });
-              },
-            ),
-            TextButton(
-              child: Text("Share"),
-              onPressed: () {
-                processData();
-                Share.share(share_data);
-              },
-            )
-          ],
+        height: 54,
+        width: double.infinity,
+        child: TextButton(
+          style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(0),
+                      side: BorderSide(color: Colors.black))),
+              backgroundColor: MaterialStateProperty.all(Colors.blue)),
+          child: Text(
+            "Share",
+            style: TextStyle(color: Colors.black),
+          ),
+          onPressed: () {
+            processData();
+            Share.share(share_data);
+          },
         ),
       )),
     );
