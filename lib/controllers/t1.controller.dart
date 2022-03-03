@@ -6,11 +6,26 @@ import 'dart:convert';
 import 'package:intl/intl.dart';
 
 class T1Controller extends GetxController {
+  RxInt _speedFirstCharacter = 0.obs;
+  RxInt get speedFirstCharacter => this._speedFirstCharacter;
+
+  RxInt _crPush = 0.obs;
+  RxInt get crPush => this._crPush;
+
+  RxInt _crDepush = 0.obs;
+  RxInt get crDepush => this._crDepush;
+
   RxList<String> _typeChangedValue = ['Fire', 'Fire', 'Fire'].obs;
   RxList<String> get typeChangedValue => this._typeChangedValue;
 
   RxList<String> _setChangedValue = <String>['-', '-', '-'].obs;
   List<String> get setChangedValue => this._setChangedValue;
+
+  RxList<String> _setSpeedString = <String>['? ', '? ', '? '].obs;
+  List<String> get setSpeedString => this._setSpeedString;
+
+  RxList<String> _setHealthPointString = <String>['? HP', '? HP', '? HP'].obs;
+  List<String> get setHealthPointString => this._setHealthPointString;
 
   RxList<bool> _checkedValueImmunity = [false, false, false].obs;
   RxList<bool> get checkedValueImmunity => this._checkedValueImmunity;
@@ -61,7 +76,7 @@ class T1Controller extends GetxController {
     this._name.refresh();
   }
 
-  String determineHP(int index, int cNum) {
+  void determineHP(int index, int cNum) {
     var formatter = NumberFormat('###,000');
     String data = "";
     int enemyHP = 0;
@@ -83,10 +98,10 @@ class T1Controller extends GetxController {
     }
     data += " HP\n";
 
-    return data;
+    _setHealthPointString[index] = data;
   }
 
-  String calculateSpeed(int index, int cNum) {
+  void calculateSpeed(int index, int cNum) {
     String finalResult = "";
     int result = 0;
 
@@ -145,7 +160,7 @@ class T1Controller extends GetxController {
       finalResult += result.toString();
     }
 
-    return finalResult;
+    _setSpeedString[index] = finalResult;
   }
 
   void changeArtifact(name, index) {
